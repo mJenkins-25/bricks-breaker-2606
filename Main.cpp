@@ -2,6 +2,7 @@
 #include "Game.h"
 #include <chrono> // https://en.cppreference.com/w/cpp/chrono
 #include <thread> // https://en.cppreference.com/w/cpp/thread
+
 using namespace std::chrono;
 float frameTimer = 1000.0f / FRAMES_PER_SECOND;
 
