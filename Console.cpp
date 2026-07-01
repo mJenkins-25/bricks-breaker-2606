@@ -1,4 +1,5 @@
 ﻿#include "stdafx.h"
+#include "wx/wx.h"
 
 HANDLE Console::out = GetStdHandle(STD_OUTPUT_HANDLE);
 HWND Console::hwnd = GetConsoleWindow();
