@@ -123,11 +123,18 @@ void Game::Render() const
 	// If the win conditin is met, 
 	// print out the message to the middle of the screen
 	if (bricks.empty()) {
-		//ball.moving = false;
 		int x = (WINDOW_WIDTH / 2);
 		int y = (WINDOW_HEIGHT / 2);
 		Console::SetCursorPosition(x, y);
 		std::cout << "You win!Press 'R' to play again.";
+	}
+
+	// Print out the losing message for the player
+	if (ball.y_position >= WINDOW_HEIGHT) {
+		int x = (WINDOW_WIDTH / 2);
+		int y = (WINDOW_HEIGHT / 2);
+		Console::SetCursorPosition(x, y);
+		std::cout << "You lose. Press 'R' to play again.";
 	}
 }
 
@@ -172,4 +179,11 @@ void Game::CheckCollision()
 	}
 
 	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
+	
+	// If the balls y position matches the window height
+	// pause the ball, because you lost
+	if (ball.y_position > WINDOW_HEIGHT - 1)
+	{
+		ball.moving = false;
+	}
 }
