@@ -119,6 +119,16 @@ void Game::Render() const
 	}
 
 	Console::Lock(false);
+
+	// If the win conditin is met, 
+	// print out the message to the middle of the screen
+	if (bricks.empty()) {
+		//ball.moving = false;
+		int x = (WINDOW_WIDTH / 2);
+		int y = (WINDOW_HEIGHT / 2);
+		Console::SetCursorPosition(x, y);
+		std::cout << "You win!Press 'R' to play again.";
+	}
 }
 
 void Game::CheckCollision()
@@ -139,16 +149,22 @@ void Game::CheckCollision()
 			// TODO #5 - If the ball hits the same brick 3 times (color == black), remove it from the vector
 
 			// Check if the brick has been hit 3 times
-			if (bricks[i].color == 0) {
+			if (bricks[i].color == 2) {
 				bricks.erase(bricks.begin() + i);
 				// Decrement i because the bricks will have shifted in the vector
 				i--;
+			}
+
+			// Pause the ball once the bricks are gone
+			if (bricks.empty())
+			{
+				ball.moving = false;
 			}
 		}
 	}
 
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
-
+	
 
 	if (paddle.Contains(ball.x_position + ball.x_velocity, ball.y_velocity + ball.y_position))
 	{
