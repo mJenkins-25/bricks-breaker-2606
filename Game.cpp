@@ -22,6 +22,7 @@ void Game::Reset()
 	// TODO #2 - Add this brick and 4 more bricks to the vector
 	
 	// Multiple brick made to be added to the vector
+	// They are evenly spaced apart in the same row
 	
 	// Brick 1
 	brick.width = 10;
@@ -35,8 +36,8 @@ void Game::Reset()
 	// Brick 2
 	brick.width = 10;
 	brick.height = 2;
-	brick.x_position = 0;
-	brick.y_position = 10;
+	brick.x_position = 10;
+	brick.y_position = 5;
 	brick.doubleThick = true;
 	brick.color = ConsoleColor::DarkGreen;
 	bricks.push_back(brick);
@@ -44,8 +45,8 @@ void Game::Reset()
 	// Brick 3
 	brick.width = 10;
 	brick.height = 2;
-	brick.x_position = 0;
-	brick.y_position = 15;
+	brick.x_position = 20;
+	brick.y_position = 5;
 	brick.doubleThick = true;
 	brick.color = ConsoleColor::DarkGreen;
 	bricks.push_back(brick);
@@ -53,8 +54,8 @@ void Game::Reset()
 	// Brick 4
 	brick.width = 10;
 	brick.height = 2;
-	brick.x_position = 0;
-	brick.y_position = 20;
+	brick.x_position = 30;
+	brick.y_position = 5;
 	brick.doubleThick = true;
 	brick.color = ConsoleColor::DarkGreen;
 	bricks.push_back(brick);
@@ -62,8 +63,8 @@ void Game::Reset()
 	// Brick 5
 	brick.width = 10;
 	brick.height = 2;
-	brick.x_position = 0;
-	brick.y_position = 25;
+	brick.x_position = 40;
+	brick.y_position = 5;
 	brick.doubleThick = true;
 	brick.color = ConsoleColor::DarkGreen;
 	bricks.push_back(brick);
@@ -105,12 +106,16 @@ void Game::Render() const
 {
 	Console::Lock(true);
 	Console::Clear();
-	
+
 	paddle.Draw();
 	ball.Draw();
 
 	// TODO #3 - Update render to render all bricks
-	brick.Draw();
+
+	// Simple for each loop to update each brick
+	for (Box brick : bricks) {
+		brick.Draw();
+	}
 
 	Console::Lock(false);
 }
