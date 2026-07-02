@@ -156,7 +156,7 @@ void Game::CheckCollision()
 			// TODO #5 - If the ball hits the same brick 3 times (color == black), remove it from the vector
 
 			// Check if the brick has been hit 3 times
-			if (bricks[i].color == 2) {
+			if (bricks[i].color == 0) {
 				bricks.erase(bricks.begin() + i);
 				// Decrement i because the bricks will have shifted in the vector
 				i--;
