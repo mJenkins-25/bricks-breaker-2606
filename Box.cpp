@@ -7,7 +7,7 @@ void Box::Draw() const
 	Console::DrawBox(x_position, y_position, width, height, doubleThick);
 }
 
-// Test comment for feature branch
+
 bool Box::Contains(int x, int y)
 {
 	if (x_position <= x && x_position + width > x && y_position <= y && y_position + height > y)
