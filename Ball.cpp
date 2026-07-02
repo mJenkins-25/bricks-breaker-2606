@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Ball.h"
 
+
 void Ball::Update()
 {
 	if (!moving)
