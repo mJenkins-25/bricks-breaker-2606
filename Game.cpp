@@ -44,8 +44,8 @@ void Game::Reset()
 	// Brick 3
 	brick.width = 10;
 	brick.height = 2;
-	brick.x_position = 5;
-	brick.y_position = 5;
+	brick.x_position = 0;
+	brick.y_position = 15;
 	brick.doubleThick = true;
 	brick.color = ConsoleColor::DarkGreen;
 	bricks.push_back(brick);
@@ -53,8 +53,8 @@ void Game::Reset()
 	// Brick 4
 	brick.width = 10;
 	brick.height = 2;
-	brick.x_position = 10;
-	brick.y_position = 10;
+	brick.x_position = 0;
+	brick.y_position = 20;
 	brick.doubleThick = true;
 	brick.color = ConsoleColor::DarkGreen;
 	bricks.push_back(brick);
@@ -63,7 +63,7 @@ void Game::Reset()
 	brick.width = 10;
 	brick.height = 2;
 	brick.x_position = 0;
-	brick.y_position = 0;
+	brick.y_position = 25;
 	brick.doubleThick = true;
 	brick.color = ConsoleColor::DarkGreen;
 	bricks.push_back(brick);
